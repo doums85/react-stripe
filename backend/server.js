@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 require('dotenv').config();
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const stripe = require('stripe')("pk_test_aNQGbC3Yk3xmKIXiD3SEg1Bl00LppTORez");
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
@@ -30,7 +30,7 @@ app.post('/api/payment', cors(), async (req, res) => {
     });
   } catch (error) {
     console.log('Error');
-    res.json({ message: 'Payment failed', success: false });
+    res.json({ message: `Payment failed : ${error}`, success: false });
   }
 });
 
