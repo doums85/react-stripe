@@ -2,8 +2,8 @@
     "name": "hello-world",
     "version": "1.0.0",
     "scripts": {
-      "start": "npm run build-web && node server",
+      "start": "npm run build-client && node server",
       "start-local": "npm run build-client && PORT=8080 node server",
-      "build-client": "cd client && npm run build && cd .."
+      "build-client": "cd web && npm run build"
     }
-  }
+  } 
