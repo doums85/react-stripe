@@ -35,8 +35,8 @@ app.post('/api/payment', cors(), async (req, res) => {
 });
 
 app.get('/', function (_, res) {
-  app.use(express.static(path.resolve(__dirname, 'client', 'build')));
-  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  app.use(express.static(path.resolve(__dirname, '../client', 'build')));
+  res.sendFile(path.resolve(__dirname, '../client', 'build', 'index.html'));
 });
 
 // Server configuration
