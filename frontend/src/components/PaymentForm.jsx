@@ -29,18 +29,12 @@ export default function PaymentForm() {
 
   async function submitHandler(e) {
     e.preventDefault();
-    console.log('====================================');
-    console.log('Requested payment method');
-    console.log('====================================');
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: 'card',
       card: elements.getElement(CardElement),
     });
 
     if (!error) {
-      console.log('====================================');
-      console.log('NO ERROR');
-      console.log('====================================');
       try {
         const { id } = paymentMethod;
 
@@ -48,9 +42,7 @@ export default function PaymentForm() {
           amount: 1000,
           id,
         });
-        console.log('====================================');
-        console.log(response);
-        console.log('====================================');
+
         if (response.data.success) {
           console.log('Successfully payment');
           setSuccess(true);
@@ -59,11 +51,6 @@ export default function PaymentForm() {
         console.log('error', error);
       }
     } else {
-
-      
-      console.log('====================================');
-      console.log('ERROR');
-      console.log('====================================');
       console.log(error.message);
     }
   }

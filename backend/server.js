@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 require('dotenv').config();
-const stripe = require('stripe')("sk_test_8c7iPyHx6s1uDoDatYNIOiYq00gtT26eAT");
+const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY);
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
@@ -41,6 +41,4 @@ app.get('/', function (_, res) {
 
 // Server configuration
 const port = process.env.PORT || 4000;
-app.listen(port, () =>
-  console.log(`listening on port ${port}`)
-);
+app.listen(port, () => console.log(`listening on port ${port}`));
