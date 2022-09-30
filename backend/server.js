@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 require('dotenv').config();
-const stripe = require('stripe')("pk_test_aNQGbC3Yk3xmKIXiD3SEg1Bl00LppTORez");
+const stripe = require('stripe')("sk_test_8c7iPyHx6s1uDoDatYNIOiYq00gtT26eAT");
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
