@@ -34,7 +34,7 @@ app.post('/api/payment', cors(), async (req, res) => {
   }
 });
 
-app.get('/*', function (_, res) {
+app.get('/', function (_, res) {
   res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
 });
 
