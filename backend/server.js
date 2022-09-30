@@ -33,11 +33,6 @@ app.post('/api/payment', cors(), async (req, res) => {
     res.json({ message: 'Payment failed', success: false });
   }
 });
-app.get('/test', function (_, res) {
-
-  res.send("ACTION");
-});
-
 
 app.get('/', function (_, res) {
   app.use(express.static(path.resolve(__dirname, '../frontend', 'build')));

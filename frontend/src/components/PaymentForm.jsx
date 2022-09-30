@@ -32,7 +32,7 @@ export default function PaymentForm() {
     console.log('====================================');
     console.log('Requested payment method');
     console.log('====================================');
-   /*  const { error, paymentMethod } = await stripe.createPaymentMethod({
+    const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: 'card',
       card: elements.getElement(CardElement),
     });
@@ -55,7 +55,7 @@ export default function PaymentForm() {
       }
     } else {
       console.log(error.message);
-    } */
+    }
   }
 
   return (
