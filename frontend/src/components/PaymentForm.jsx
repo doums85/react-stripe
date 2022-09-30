@@ -43,7 +43,9 @@ export default function PaymentForm() {
           amount: 1000,
           id,
         });
-
+        console.log('====================================');
+        console.log('Requested payment method');
+        console.log('====================================');
         if (response.data.success) {
           console.log('Successfully payment');
           setSuccess(true);
@@ -59,13 +61,13 @@ export default function PaymentForm() {
   return (
     <>
       {!success ? (
-        <form className='form' onSubmit={submitHandler}>
-          <fieldset className='form__group'>
+        <form className="form" onSubmit={submitHandler}>
+          <fieldset className="form__group">
             <div>
               <CardElement options={CARD_OPTIONS} />
             </div>
           </fieldset>
-          <button className='form__button'>Pay</button>
+          <button className="form__button">Pay</button>
         </form>
       ) : (
         <div>
