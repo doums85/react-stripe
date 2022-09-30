@@ -38,6 +38,9 @@ export default function PaymentForm() {
     });
 
     if (!error) {
+      console.log('====================================');
+      console.log('NO ERROR');
+      console.log('====================================');
       try {
         const { id } = paymentMethod;
 
@@ -54,6 +57,10 @@ export default function PaymentForm() {
         console.log('error', error);
       }
     } else {
+
+      console.log('====================================');
+      console.log('ERROR');
+      console.log('====================================');
       console.log(error.message);
     }
   }
