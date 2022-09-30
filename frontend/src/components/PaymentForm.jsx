@@ -29,7 +29,9 @@ export default function PaymentForm() {
 
   async function submitHandler(e) {
     e.preventDefault();
-
+    console.log('====================================');
+    console.log('Requested payment method');
+    console.log('====================================');
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: 'card',
       card: elements.getElement(CardElement),
@@ -43,9 +45,7 @@ export default function PaymentForm() {
           amount: 1000,
           id,
         });
-        console.log('====================================');
-        console.log('Requested payment method');
-        console.log('====================================');
+ 
         if (response.data.success) {
           console.log('Successfully payment');
           setSuccess(true);
