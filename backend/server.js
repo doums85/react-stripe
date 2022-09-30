@@ -43,5 +43,5 @@ app.get('/', function (_, res) {
 // Server configuration
 const port = process.env.PORT || 4000;
 app.listen(port, () =>
-  console.log(`listening on port ${process.env.STRIPE_SECRET_KEY}`)
+  console.log(`listening on port ${port}`)
 );
